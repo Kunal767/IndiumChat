@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="sendername d-none" id="sendername">{{ session.username }}</div>
+
+<div class="receiverdetails overflow-hidden">
+    <div class="float-start">
+        <div class="chatname">
+            <h4 id="receivername">Ethan Winterss</h4>
+        </div>
+        {% if status == "Online" %}
+        <div class="chatstatus theme">
+            <h6 id="receiverstatus">Online</h6>
+        </div>
+        {% endif %}
+    </div>
+    <div class="float-end">
+        <a href="/members" class="btn btn-outline-warning">Back</a>
+    </div>
+</div>
+
+<div class="messagebox" id="messages">
+    {% for chat in prechats %}
+        {% if chat.to_user != session.username %}
+        <div class="mymsg">
+            <p class="msgname">{{ session.username }}</p>
+            {{chat.msg}}<br>
+            <p class="chatdate">{{ chat.datetime }}</p>
+        </div>
+        {% elif chat.to_user == session.username %}
+        <div class="oppomsg">
+            <p class="msgname">{{ opponent }}</p>
+            {{chat.msg}}<br>
+            <p class="chatdate">{{ chat.datetime }}</p>
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>
+<div class="sendstuff">
+    <div class="chatbox">
+        <input type="text" class="form-control cleaninp" name="msg" id="msg" placeholder="Type something...">
+    </div>
+    <div class="sendbtn">
+        <button type="button" name="sendbtn" id="sendbtn" class="btn btn-outline-warning"
+            onclick="sendMessage();">Send</button>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+    integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+    crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+
+{% endblock %}

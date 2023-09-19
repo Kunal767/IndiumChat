@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+{% if error_code == 1 %}
+
+<div class="alert alert-warning" role="alert">
+    Invalid Credentials! Please enter your correct credentials.
+</div>
+
+{% endif %}
+
+<div class="joinform">
+    <form method="post" action="/login" class="regform">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="cleaninp form-control" placeholder="Username" id="name" name="username" required aria-describedby="namehelp">
+            <div id="namehelp" class="form-text">Enter your username!</div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control cleaninp" placeholder="Password" id="password" name="password" required>
+        </div>
+        <p class="text-end">New user? <a href="/" class="theme">Signup</a></p>
+        <button type="submit" class="btn btn-outline-warning">Join</button>
+    </form>
+</div>
+
+
+{% endblock %}

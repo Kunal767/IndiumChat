@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="memberlist">
+    <div class="upperdetailer">
+        <div class="memberfloater">
+            <h3>Welcome, <strong class="memberheader">{{ session.username }}</strong></h3>
+            <a href="/logout" class="btn btn-outline-danger text-end" style="margin-bottom: 3%;">Logout</a>
+        </div>
+    </div>
+    <div class="upperdetailer">
+        <div class="float-start">
+            <h4>Other Members:</h4>
+        </div>
+    </div>
+    
+    <div class="members">
+        {% for member, details in members.items() %}
+            {% if session.username != member %}
+            <div class="member">
+                <div class="leftside">
+                    <div class="name">
+                        <h5>{{ member }}</h5>
+                    </div>
+                    {% if details.lastSeen == "Online" %}
+                        <div class="last-seen"><strong class="theme">Online</strong></div>
+                    {% else %}
+                        <div class="last-seen"><strong class="theme">Last Seen: </strong>{{ details.lastSeen }}</div>
+                    {% endif %}
+                </div>
+                <div class="rightside">
+                    <div class="msgbtn">
+                        <a class="btn btn-outline-warning" href="/chat/{{ member }}">Message</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

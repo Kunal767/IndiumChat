@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
+
+
+body{
+    background: #121212;
+    color:white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.theme{
+    color: #eda126;
+}
+
+#namehelp{
+    color: #eda126;
+}
+
+.header{
+    text-align: center;
+    align-items: center;
+    height: 20vh;
+    margin-bottom: 1%;
+    font-family: 'Carter One', cursive;
+    position: relative;
+}
+
+.headerin{
+    position: absolute;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.joinform{
+    width: 50%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.memberheader{
+    color: #eda126;
+}
+
+
+.member{
+    overflow: hidden;
+    border: 1px solid rgb(78, 77, 73);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.member .leftside{
+    float: left;
+    width: 60%;
+}
+
+.member .rightside{
+    float: right;
+}
+
+.last-message{
+    color: #d4d6d9;
+}
+
+.cleaninp::placeholder{
+    color: #d6d0d0 !important;
+}
+
+.cleaninp, .cleaninp:-webkit-autofill, .cleaninp:-webkit-autofill:hover, .cleaninp:-webkit-autofill:focus, .cleaninp:-webkit-autofill:active {
+    background-color: #121212 !important;
+    border-bottom: 1px solid #eda126 !important;
+    color: white !important;
+    border-radius: 2px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-top: 0px !important;
+    outline: 0 !important;
+    -webkit-appearance: none !important;
+    box-shadow: none !important;
+}
+
+.sendstuff{
+    height: 10vh;
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.chatbox{
+    text-align: center;
+    align-items: center;
+    width: 80%;
+}
+
+.chatbox input{
+    width: 100%;
+}
+
+.sendbtn{
+    text-align: center;
+    width: 20%;
+}
+
+.sendbtn button{
+    width: 80%;
+}
+
+.btn-outline-warning{
+    --bs-btn-hover-bg: #eda126;
+    --bs-btn-hover-border-color: #eda126;
+    --bs-btn-color: #eda126;
+    --bs-btn-border-color: #eda126;
+    --bs-btn-active-bg: #eda126;
+    --bs-btn-active-border-color: #eda126;
+    --bs-btn-disabled-color: #eda126;
+    --bs-btn-disabled-border-color: #eda126;
+}
+
+.alert-warning{
+    background-color: #eda126;
+    border-color: #eda126;
+    color: white;
+    width: 50%;
+    margin: auto;
+}
+
+.regform{
+    margin-top: 5%;
+}
+
+.upperdetailer{
+    overflow: hidden;
+    margin-bottom: 2%;
+}
+
+.messagebox{
+    overflow-y: auto;
+    margin: auto;
+    margin-bottom: 15px !important;
+    height: 55vh;
+    width: 80vw;
+    border: 1px solid rgb(78, 77, 73);
+    border-radius: 6px;
+}
+
+.oppomsg{
+    padding: 20px;
+    float: left;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-bottom: 1%;
+    background-color: transparent;
+    width: 40%;
+    border: 1px solid #47494d;
+    border-radius: 8px;
+    clear: both;
+    font-size: 14px;
+}
+
+.chatdate{
+    font-size: 10px;
+    margin-top: 1%;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-align: right;
+}
+
+.msgname{
+    margin-bottom: 1px;
+    font-size: 16px;
+    color: #eda126;
+}
+
+.mymsg{
+    clear: both;
+    padding: 20px;
+    float: right;
+    margin-top: 1%;
+    margin-right: 2%;
+    margin-bottom: 1%;
+    background-color: transparent;
+    width: 40%;
+    border: 1px solid #eda126;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.receiverdetails{
+    width: 80vw;
+    margin: auto;
+    padding: 5px;
+}
+
+.memberfloater{
+    float: right;
+    align-items: end;
+    text-align: end;
+}
+
+@media screen and (max-width: 600px){
+    .joinform{
+        text-align: center;
+        align-items: center;
+        width: 80%;
+    }
+
+    .alert-warning{
+        width: 80%;
+    }
+
+    .chatbox{
+        width: 70%;
+    }
+
+    .sendbtn{
+        width: 30%;
+    }
+    
+    .oppomsg, .mymsg{
+        width: 48%;
+    }
+
+    .memberfloater{
+        text-align: center;
+        float: none;
+    }
+
+    .chatdate{
+        margin-top: 10%;
+    }
+}
+
+@media screen and (max-width: 280px){
+    .chatbox{
+        width: 100%;
+    }
+
+    .sendbtn{
+        margin-top: 2%;
+        width: 50%;
+    }
+
+    .sendstuff{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}

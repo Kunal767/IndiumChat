@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+{% if error_code == 1 %}
+
+<div class="alert alert-warning" role="alert">
+    User already exists with this username! Please enter any other username.
+</div>
+
+{% endif %}
+
+<div class="joinform">
+    <form method="post" action="/members" class="regform">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="cleaninp form-control" placeholder="Username" id="name" name="username" required aria-describedby="namehelp">
+            <div id="namehelp" class="form-text">Enter a username to join IndiumChat!</div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control cleaninp" placeholder="Password" id="password" name="password" required>
+        </div>
+        <p class="text-end">Already a user? <a href="/login" class="theme">Login</a></p>
+        <button type="submit" class="btn btn-outline-warning">Join</button>
+    </form>
+</div>
+
+
+{% endblock %}
