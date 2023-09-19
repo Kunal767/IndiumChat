@@ -1,4 +1,4 @@
-var socketio = io.connect('https://' + document.domain + ':' + location.port);
+var socketio = io();
 
 const messages = document.getElementById('messages');
 

@@ -159,4 +159,4 @@ def logout():
     return redirect("/login")
 
 if __name__ == "__main__":
-    iosocket.run(app, debug=True)
+    iosocket.run(app, port=3000, debug=True)
