@@ -71,6 +71,17 @@ def room():
         password = request.form['password']
         members = read_members_file()
 
+        splittedname = username.split(" ")
+        while True:
+            if splittedname[-1] == "":
+                splittedname.remove(splittedname[-1])
+            else:
+                break
+
+        username = ""
+        for letter in splittedname:
+            username = username + letter
+
         if username in members.keys():
             return render_template("index.html", error_code=1)
 
