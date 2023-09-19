@@ -1,1 +1,14 @@
-{"KunalPC": {"Password": "macstock", "Messages": [{"to_user": "KunalMobile", "datetime": "19-09-2023 19:35:10", "msg": "hello"}], "lastSeen": "19-09-2023 19:35:57"}, "KunalMobile": {"Password": "macstock", "Messages": [{"to_user": "KunalPC", "datetime": "19-09-2023 19:35:48", "msg": "yes?"}], "lastSeen": "Online"}}
+{
+    "KunalPC": {
+        "Password": "macstock",
+        "Messages": [
+        ],
+        "lastSeen": "19-09-2023 19:35:57"
+    },
+    "KunalMobile": {
+        "Password": "macstock",
+        "Messages": [
+        ],
+        "lastSeen": "Online"
+    }
+}

@@ -4,6 +4,7 @@ import json
 import random, string
 from datetime import datetime
 from operator import itemgetter
+import pytz
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "thereisaghostoverhere@98267"
@@ -132,7 +133,8 @@ def message(data):
     sendername = data['sender']
     receivername = data["receiver"]
     msg = data['message']
-    currentdatetime = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+    indiantimezone = pytz.timezone('Asia/Kolkata')
+    currentdatetime = datetime.now(indiantimezone).strftime("%d-%m-%Y %H:%M:%S")
     msge = {"name": sendername, "msg": msg, "datetime": currentdatetime}
     send(msge, to=mutualroom)
 
