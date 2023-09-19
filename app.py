@@ -8,6 +8,7 @@ from operator import itemgetter
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "thereisaghostoverhere@98267"
 iosocket = SocketIO(app)
+iosocket.init_app(app, cors_allowed_origins="*")
 
 
 def read_members_file():
