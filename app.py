@@ -148,7 +148,8 @@ def message(data):
 @iosocket.on("disconnect")
 def disconnect():
     membersfile = read_members_file()
-    currentdatetime = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+    indiantimezone = pytz.timezone('Asia/Kolkata')
+    currentdatetime = datetime.now(indiantimezone).strftime("%d-%m-%Y %H:%M:%S")
     membersfile[session['username']]['lastSeen'] = currentdatetime
     write_members_file(membersfile)
     mutualroom = session.get("room")
